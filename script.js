@@ -12,15 +12,24 @@ for (let i = 0; i < btnsOpenModal.length; i++)
     modal.classList.remove('hidden');
     overlay.classList.remove('hidden');
 
-    // closing the modal
-    btnCloseModal.addEventListener('click', function () {
+    // Refactoring the code
+    const closeModal = function () {
       modal.classList.add('hidden');
       overlay.classList.add('hidden');
-    });
+    };
+    // closing the modal
+    btnCloseModal.addEventListener(
+      'click',
+      closeModal
+      //   modal.classList.add('hidden');
+      //   overlay.classList.add('hidden');
+    );
 
     // clicking empty space to close the modal
-    overlay.addEventListener('click', function () {
-      modal.classList.add('hidden');
-      overlay.classList.add('hidden');
-    });
+    overlay.addEventListener(
+      'click',
+      closeModal
+      //   modal.classList.add('hidden');
+      //   overlay.classList.add('hidden');
+    );
   });
